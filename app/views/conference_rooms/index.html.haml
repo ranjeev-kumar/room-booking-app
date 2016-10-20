@@ -1,0 +1,30 @@
+%div
+  %h2.pull-left Conference Rooms List
+  = link_to 'Facilities List', facilities_path, class: 'pull-right btn btn-default'
+  = link_to 'Add Conference room', new_conference_room_path, class: 'pull-right btn btn-default'
+  = link_to 'Booking List', room_bookings_path, class: 'pull-right btn btn-default'
+%table{class: "table table-bordered"}
+  %tr
+    %th{:colspan => "6"}
+      %b Room Details
+  -if @conference_rooms.present?
+    %tr
+      %th Room no
+      %th Description
+      %th Facilities
+      %th{:colspan => "3"}
+        Actions
+    - @conference_rooms.each do |conference_room|
+      %tr
+        %td= conference_room.room_no
+        %td= conference_room.description
+        %td
+          - conference_room.facilities.each do |facilities|
+            = "#{facilities.name} "
+        %td= link_to 'Show', conference_room, class: 'btn btn-default'
+        %td= link_to 'Edit', edit_conference_room_path(conference_room), class: 'btn btn-primary'
+        %td= link_to 'Destroy', conference_room, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
+  - else
+    %tr
+      %td{:colspan => "5"}
+        %b No any Room added.

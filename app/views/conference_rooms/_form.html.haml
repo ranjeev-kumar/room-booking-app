@@ -1,0 +1,27 @@
+= simple_form_for @conference_room do |f|
+  .form-group
+    - if @conference_room.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@conference_room.errors.count, "error")
+          prohibited this conference_room from being saved:
+        %ul
+          - @conference_room.errors.full_messages.each do |message|
+            %li= message
+  .form-group
+    = label_tag "Room No."
+    %br
+    = f.text_field :room_no, placeholder: 'Room No.'
+  .form-group
+    = label_tag "Description"
+    %br
+    = f.text_area :description, placeholder: 'Description'
+  .form-group
+    = label_tag "Select facilities"
+    %br
+    - @facilities.each do |ff|
+      = check_box_tag "conference_room[facilities_fields][id][]", ff.id, (@facilities_ids.include?(ff.id) if @facilities_ids.present?)
+      = ff.name
+  .form-group
+    = f.button :submit, 'Submit', class: 'btn btn-primary'
+

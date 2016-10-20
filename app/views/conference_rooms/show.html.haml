@@ -1,0 +1,8 @@
+%p
+  %strong Room no:
+  = @conference_room.room_no
+%p
+  %strong Description:
+  = @conference_room.description
+= link_to 'Edit', edit_conference_room_path(@conference_room), class: 'pull-right btn btn-default'
+= link_to 'Back', conference_rooms_path, class: 'pull-left btn btn-default'

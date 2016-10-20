@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %strong Room:
+  = @room_booking.room_id
+%p
+  %strong User:
+  = @room_booking.user_id
+= link_to 'Edit', edit_room_booking_path(@room_booking)
+|
+= link_to 'Back', room_bookings_path

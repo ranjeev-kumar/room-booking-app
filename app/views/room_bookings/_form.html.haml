@@ -1,0 +1,19 @@
+= simple_form_for @room_booking do |f|
+  .form-group
+    - if @room_booking.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@room_booking.errors.count, "error")
+          prohibited this room_booking from being saved:
+        %ul
+          - @room_booking.errors.full_messages.each do |message|
+            %li= message
+  .form-group
+    = f.input :room_id, as: :select, include_blank: false, prompt: "Select Room no", collection: @rooms
+  .form-group
+    = f.hidden_field :user_id, value: current_user.id
+  .form-group
+    = label_tag "Booking Date"
+    = f.text_field :start_date, class: 'form-controls datepicker', placeholder: 'Booking Date'
+  .actions
+    = f.submit "Book Room", class: 'btn btn-primary'

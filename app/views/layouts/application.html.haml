@@ -1,0 +1,21 @@
+!!!
+%html
+  %head
+    %title Conference Room Booking
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  %body
+    .col-md-12
+      .pull-left
+        = link_to 'Home', conference_rooms_path, class: 'btn btn-link'
+      - if user_signed_in?
+        .pull-right
+          %strong
+            = current_user.name
+          = link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'pull-right btn btn-link'
+    %div{:style => "clear:both;"}
+      %p.notice= notice
+      %p.alert= alert
+    .col-sm-offset-1.col-sm-10
+      = yield
