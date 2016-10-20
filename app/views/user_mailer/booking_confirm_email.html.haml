@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h3 Your booking has been confirmed.
+    Room No
+    %h4= @room_booking.conference_room.room_no
+    Booking Date
+    %h4= @room_booking.start_date.to_date.to_s
+    Booking Status
+    %h4= @room_booking.status

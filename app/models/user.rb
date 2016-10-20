@@ -7,4 +7,13 @@ class User < ActiveRecord::Base
   #Associations
   has_many :room_bookings
   has_many :conference_rooms, through: :room_bookings
+
+  # Callbacks
+  after_create :welcome_user
+
+  private
+    def welcome_user
+      UserMailer.welcome_email(self).deliver
+    end
+
 end

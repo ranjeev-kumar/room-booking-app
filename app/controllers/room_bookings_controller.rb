@@ -55,9 +55,10 @@ class RoomBookingsController < ApplicationController
   # DELETE /room_bookings/1
   # DELETE /room_bookings/1.json
   def destroy
-    @room_booking.destroy
+    @room_booking.status = 'canceled'
+    @room_booking.save
     respond_to do |format|
-      format.html { redirect_to room_bookings_url, notice: 'Room booking was successfully destroyed.' }
+      format.html { redirect_to room_bookings_url, notice: 'Room booking was successfully canceled.' }
       format.json { head :no_content }
     end
   end
@@ -74,6 +75,6 @@ class RoomBookingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def room_booking_params
-      params.require(:room_booking).permit(:room_id, :user_id, :start_date)
+      params.require(:room_booking).permit(:conference_room_id, :user_id, :start_date)
     end
 end

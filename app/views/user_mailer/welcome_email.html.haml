@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1
+      Welcome to Conference Room Booking app, #{@user.name}
+    %p
+      You have successfully signed up to Conference Room Booking app,
+      your username is: #{@user.email}.
+      %br
+    %p
+      To login to the site, just follow this link: #{link_to 'Click Here to log in', @url}.
+    %p Thanks for joining and have a great day!

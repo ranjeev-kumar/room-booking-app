@@ -9,7 +9,7 @@
           - @room_booking.errors.full_messages.each do |message|
             %li= message
   .form-group
-    = f.input :room_id, as: :select, include_blank: false, prompt: "Select Room no", collection: @rooms
+    = f.input :conference_room_id, as: :select, include_blank: false, prompt: "Select Room no", collection: @rooms
   .form-group
     = f.hidden_field :user_id, value: current_user.id
   .form-group

@@ -40,4 +40,16 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      address:              '206.183.111.214',
+      port:                 25,
+      domain:               'wwindia.com',
+      user_name:            'ranjeev.kumar@wwindia.com',
+      password:             'ranjeev.123',
+      authentication:       'plain',
+      openssl_verify_mode:  'none'
+
+  }
 end

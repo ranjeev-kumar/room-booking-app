@@ -14,7 +14,7 @@
         Actions
     - @room_bookings.each do |room_booking|
       %tr
-        %td= room_booking.room_id
+        %td= room_booking.conference_room_id
         %td= room_booking.user_id
         %td= room_booking.start_date.to_date.to_s
         %td= room_booking.status.capitalize
