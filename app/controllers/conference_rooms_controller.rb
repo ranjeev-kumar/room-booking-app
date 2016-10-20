@@ -25,7 +25,6 @@ class ConferenceRoomsController < ApplicationController
   # POST /conference_rooms
   # POST /conference_rooms.json
   def create
-    binding.pry
     @conference_room = ConferenceRoom.new(conference_room_params)
 
     respond_to do |format|

@@ -35,8 +35,6 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 # Use bootstrap date-picker
 gem 'bootstrap-datepicker-rails'
 
-gem 'cancancan'
-gem 'rolify'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -46,6 +44,8 @@ gem 'rolify'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'pry', '~> 0.10.4'
+gem 'sprockets', '3.6.3'
+
 gem 'rails_12factor', group: :production
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
