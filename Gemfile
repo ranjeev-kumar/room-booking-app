@@ -44,7 +44,7 @@ gem 'bootstrap-datepicker-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'pry', '~> 0.10.4'
-gem 'sprockets', '3.6.3'
+gem 'sprockets', '3.7.2'
 
 gem 'rails_12factor', group: :production
 group :development, :test do
